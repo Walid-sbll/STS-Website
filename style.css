@@ -1,0 +1,195 @@
+/* 1. GLOBALE FARBVARIABLEN & EINSTELLUNGEN */
+:root {
+    --color-primary: #12263F;      /* Deep Navy aus dem Logo */
+    --color-accent: #C5A880;       /* Sandgold für Highlights */
+    --color-accent-hover: #b09167; /* Dunkleres Gold beim Drüberfahren */
+    --color-bg: #FDFCFB;           /* Sanftes Cremeweiß */
+    --color-card-bg: #FFFFFF;      /* Reines Weiß für Karten */
+    --color-text: #2D3748;         /* Dunkles Anthrazit für Lesbarkeit */
+    --color-text-light: #718096;   /* Helles Grau für Untertitel */
+    
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    
+    --shadow-soft: 0 4px 20px rgba(18, 38, 63, 0.06);
+    --border-radius: 8px;
+}
+
+/* 2. BASIS-RESET (Entfernt ungewollte Standardabstände des Browsers) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+/* 3. LAYOUT-HELFER */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 4. NAVBAR STYLING */
+.navbar {
+    background-color: var(--color-card-bg);
+    border-bottom: 1px solid rgba(197, 168, 128, 0.2); /* Dezent goldene Linie */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-soft);
+}
+
+.navbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+}
+
+.brand-logo img {
+    height: 60px; /* Saubere Skalierung für das Logo */
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px; /* Abstand zwischen den Menüpunkten */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-accent);
+}
+
+/* 5. BUTTONS */
+.btn-primary {
+    background-color: var(--color-primary);
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent);
+    color: #ffffff;
+}
+/* 6. HERO-BEREICH */
+.hero {
+    padding: 80px 0;
+    text-align: center;
+    background: linear-gradient(180deg, #FFFFFF 0%, var(--color-bg) 100%);
+    border-bottom: 1px solid rgba(197, 168, 128, 0.15);
+}
+
+.hero-content {
+    max-width: 800px; /* Hält den Text zentriert und verhindert zu lange Zeilen */
+}
+
+.badge {
+    display: inline-block;
+    background-color: rgba(197, 168, 128, 0.15);
+    color: var(--color-primary);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border: 1px solid rgba(197, 168, 128, 0.3);
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    color: var(--color-primary);
+    margin-bottom: 18px;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.15rem;
+    color: var(--color-text-light);
+    margin-bottom: 35px;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Sekundärer Button (Umrandung statt Füllung) */
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+/* 7. VERTRAUENS-LEISTE (CSS GRID) */
+.trust-bar {
+    padding: 40px 0;
+    background-color: var(--color-card-bg);
+    border-bottom: 1px solid rgba(197, 168, 128, 0.15);
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.trust-item {
+    padding: 20px;
+    border-radius: var(--border-radius);
+    background-color: var(--color-bg);
+    border: 1px solid rgba(197, 168, 128, 0.2);
+    box-shadow: var(--shadow-soft);
+}
+
+.trust-icon {
+    font-size: 2rem;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.trust-item h3 {
+    font-size: 1.1rem;
+    color: var(--color-primary);
+    margin-bottom: 6px;
+    font-family: var(--font-body);
+    font-weight: 700;
+}
+
+.trust-item p {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+}
