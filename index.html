@@ -3,225 +3,290 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STS Schneiderei & Textilreinigung Sunbul | Bornheim</title>
+    <title>STS | Textilreinigung & Schneiderei Bornheim</title>
     
-    <!-- Schriften laden -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- CSS-Datei verknüpfen -->
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- KOPFZEILE / NAVIGATION -->
+
+    <!-- =================================================================
+         1. VOLLBILD WILLKOMMENS-OVERLAY (POPT ZUERST AUF)
+         ================================================================= -->
+    <div id="welcome-modal" class="modal-overlay">
+        <div class="modal-card">
+            <div class="modal-header">
+                <img src="images/logo.png.png" alt="STS Logo" class="modal-logo">
+                <h2>Willkommen bei STS</h2>
+                <p class="modal-subtitle">Textilreinigung & Schneiderei</p>
+            </div>
+
+            <div class="modal-body">
+                <p class="modal-question">Was führt Sie heute zu uns?</p>
+                <div class="modal-grid">
+                    <button class="modal-choice-btn" onclick="selectTopic('schneiderei')">
+                        <strong>Maßschneiderei</strong>
+                        <small>Änderungen, Kürzen & Reparaturen</small>
+                    </button>
+                    <button class="modal-choice-btn" onclick="selectTopic('reinigung')">
+                        <strong>Textilreinigung</strong>
+                        <small>Anzüge, Kleider, Hemden & Vorhänge</small>
+                    </button>
+                    <button class="modal-choice-btn" onclick="selectTopic('kuscheltiere')">
+                        <strong>Kuscheltier-Klinik</strong>
+                        <small>Schonwäsche & Restauration</small>
+                    </button>
+                    <button class="modal-choice-btn" onclick="selectTopic('b2b')">
+                        <strong>B2B & Gewerbekunden</strong>
+                        <small>Für jedes Business & jede Branche</small>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================================================================
+         2. KOPFZEILE (NAVBAR)
+         ================================================================= -->
     <header class="navbar">
         <div class="container navbar-inner">
             <a href="#" class="brand-logo">
-                <img src="images/logo.png" alt="STS Schneiderei & Textilreinigung Sunbul Logo">
-            </a>
+    <img src="\C:\Users\waled\Desktop\STS Website2\images/logo.png" alt="STS Logo">
+</a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#ueber-uns">Über uns</a></li>
-                    <li><a href="#leistungen">Leistungen</a></li>
+                    <li><a href="#schneiderei">Schneiderei</a></li>
+                    <li><a href="#reinigung">Textilreinigung</a></li>
                     <li><a href="#kuscheltiere">Kuscheltier-Klinik</a></li>
-                    <li><a href="#b2b">Geschäftskunden</a></li>
-                    <li><a href="#oeffnungszeiten">Öffnungszeiten</a></li>
+                    <li><a href="#b2b">B2B & Gewerbe</a></li>
+                    <li><a href="#kontakt">Standort & Zeiten</a></li>
                 </ul>
             </nav>
-            <a href="#kontakt" class="btn-primary">Kontakt & Anfahrt</a>
+            <a href="#kontakt" class="nav-btn">Kontakt & Anfahrt</a>
         </div>
     </header>
 
+    <!-- =================================================================
+         3. HAUPTBEREICH
+         ================================================================= -->
     <main>
-        <!-- 1. HERO-BEREICH (Kommt immer als Allererstes) -->
+        <!-- HERO BEREICH -->
         <section class="hero">
             <div class="container hero-content">
-                <span class="badge">Neuübernahme & Tradition seit 1978</span>
-                <h1>Sunbul Textilreinigung & Schneiderei</h1>
-                <p class="hero-subtitle">Mit Präzision gepflegt, mit Sorgfalt geschneidert. Ihr Spezialist für Textilpflege, Maßänderungen und Kuscheltier-Restauration in Bornheim.</p>
+                <span class="badge">Traditionelles Handwerk & Textilpflege</span>
+                <h1 class="hero-title">STS Textilreinigung <span>&</span> Schneiderei</h1>
+                <p class="hero-motto">„Mit Präzision gepflegt, mit Sorgfalt geschneidert.“</p>
+            </div>
+        </section>
+
+        <!-- ZICK-ZACK BEREICHE -->
+       <!-- 1. SCHNEIDEREI (Split Screen) -->
+        <section id="schneiderei" class="split-section">
+            <div class="split-text">
+                <span class="section-tag">Handwerk & Passform</span>
+                <h2>Maßschneiderei & Reparaturen</h2>
+                <p class="story-lead">Perfekter Sitz für Ihre Lieblingsstücke – von der feinen Naht bis zur Maßanpassung.</p>
+                <p>Ob Hosen kürzen, Reißverschlüsse tauschen oder anspruchsvolle Passformänderungen: Wir kümmern uns mit meisterlicher Sorgfalt um Ihre Garderobe.</p>
                 
-                <div class="hero-actions">
-                    <a href="#leistungen" class="btn-primary">Leistungen ansehen</a>
-                    <a href="#kontakt" class="btn-secondary">Öffnungszeiten & Anfahrt</a>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <span class="feature-icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><line x1="20" y1="4" x2="8.12" y2="15.88"></line><line x1="14.47" y1="14.48" x2="20" y2="20"></line><line x1="8.12" y1="8.12" x2="12" y2="12"></line></svg>
+                        </span>
+                        <span class="feature-text">Maßanfertigung</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        </span>
+                        <span class="feature-text">Express-Service</span>
+                    </div>
+                </div>
+
+                <a href="#kontakt" class="nav-btn" style="display: inline-block; width: max-content; margin-top: 15px;">Mehr erfahren</a>
+            </div>
+            <div class="split-image">
+                <img src="images/schneiderei.jpg.jpg" alt="Maßschneiderei">
+            </div>
+        </section>
+
+        <!-- 2. TEXTILREINIGUNG (Reverse) -->
+        <section id="reinigung" class="split-section reverse bg-alt">
+            <div class="split-text">
+                <span class="section-tag">Faserschonende Pflege</span>
+                <h2>Traditionelle Textilreinigung</h2>
+                <p class="story-lead">Modernste Reinigungstechnik trifft auf jahrzehntelange Erfahrung.</p>
+                <p>Schonende Pflege für Business-Anzüge, Kleider, Hemdenservice sowie Heimtextilien wie Vorhänge, Bettwäsche und Teppiche.</p>
+                
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <span class="feature-icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46L16 2a8 8 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"></path></svg>
+                        </span>
+                        <span class="feature-text">Hemdenservice</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path><line x1="16" y1="8" x2="2" y2="22"></line></svg>
+                        </span>
+                        <span class="feature-text">Umweltschonend</span>
+                    </div>
+                </div>
+
+                <a href="#kontakt" class="nav-btn" style="display: inline-block; width: max-content; margin-top: 15px;">Preisliste ansehen</a>
+            </div>
+            <div class="split-image">
+                <img src="images/reinigung.jpg.jpg" alt="Textilreinigung"> 
+            </div>
+        </section>
+
+        <!-- 3. KUSCHELTIERE -->
+        <section id="kuscheltiere" class="split-section">
+            <div class="split-text">
+                <span class="section-tag">Emotionaler Spezialservice</span>
+                <h2>Kuscheltier-Klinik</h2>
+                <p class="story-lead">„Wir waschen keine Textilien – wir bewahren unersetzliche Erinnerungen.“</p>
+                <p>Liebevolle Schonwäsche per Hand, Aufpolsterung der Füllung und handwerkliche Reparatur für treue Kindheitsbegleiter.</p>
+                
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <span class="feature-icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"></path></svg>
+                        </span>
+                        <span class="feature-text">Schonwäsche</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>
+                        </span>
+                        <span class="feature-text">Restauration</span>
+                    </div>
+                </div>
+
+                <a href="#kontakt" class="nav-btn" style="display: inline-block; width: max-content; margin-top: 15px;">Patienten anmelden</a>
+            </div>
+            <div class="split-image">
+                <img src="images/kuscheltier.jpg.jpg" alt="Kuscheltier-Klinik">
+            </div>
+        </section>
+
+        <!-- 4. B2B (Reverse) -->
+        <section id="b2b" class="split-section reverse bg-alt">
+            <div class="split-text">
+                <span class="section-tag">Für jedes Business</span>
+                <h2>Gewerbekunden</h2>
+                <p class="story-lead">Verlässliche Großmengen-Reinigung und Logistik für Unternehmen aller Art.</p>
+                <p>Rahmenverträge für Restaurants, Praxen, Vereine sowie lokales Gewerbe inklusive direktem Hol- und Bringdienst.</p>
+                
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <span class="feature-icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                        </span>
+                        <span class="feature-text">Großmengen</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                        </span>
+                        <span class="feature-text">Hol- & Bringservice</span>
+                    </div>
+                </div>
+
+                <a href="#kontakt" class="nav-btn" style="display: inline-block; width: max-content; margin-top: 15px;">B2B-Konditionen</a>
+            </div>
+            <div class="split-image">
+                <img src="images/b2b.jpg.jpg" alt="B2B & Gewerbekunden">
+            </div>
+        </section>
+
+       <!-- 5. STANDORT & KONTAKT (Dunkler Hintergrund) -->
+        <section id="kontakt" class="contact-section">
+            <div class="container contact-grid">
+                <div class="contact-info">
+                    <span class="section-tag" style="color: var(--color-accent);">Besuchen Sie uns</span>
+                    <h2>Standort & Zeiten</h2>
+                    <p class="contact-address">
+                        <strong>STS Textilreinigung & Schneiderei</strong><br>
+                        Königstraße 94<br>
+                        53332 Bornheim
+                    </p>
+                    
+                    <div class="hours-list">
+                        <div class="hour-row">
+                            <span>Montag – Freitag</span>
+                            <span>09:00 – 18:00 Uhr</span>
+                        </div>
+                        <div class="hour-row">
+                            <span>Samstag</span>
+                            <span>09:00 – 13:00 Uhr</span>
+                        </div>
+                        <div class="hour-row closed">
+                            <span>Sonntag</span>
+                            <span>Geschlossen</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-map">
+                    <!-- Platzhalter für die Google Maps Einbindung -->
+                    <div class="map-placeholder">
+                        <span class="feature-icon">📍</span>
+                        <span>Google Maps Karte (Bornheim)</span>
+                    </div>
                 </div>
             </div>
         </section>
-        <!-- VERTRAUENS-LEISTE / TRUST-BADGES -->
-<section class="trust-bar">
-    <div class="container trust-grid">
-        <div class="trust-item">
-            <span class="trust-icon">✂️</span>
-            <h3>25+ Jahre Erfahrung</h3>
-            <p>Meisterhafte Schneiderkunst & Fachkompetenz</p>
-        </div>
-        <div class="trust-item">
-            <span class="trust-icon">⚡</span>
-            <h3>Express-Service</h3>
-            <p>Schnelle Bearbeitung auf Anfrage</p>
-        </div>
-        <div class="trust-item">
-            <span class="trust-icon">🌿</span>
-            <h3>Umweltschonend</h3>
-            <p>Moderne & faserschonende Textilpflege</p>
-        </div>
-        <div class="trust-item">
-            <span class="trust-icon">🅿️</span>
-            <h3>Kundenparkplatz</h3>
-            <p>Bequemes Parken direkt vor der Tür</p>
-        </div>
-    </div>
-</section>
-        <!-- Über uns / Vertrauensfaktoren -->
-        <section id="ueber-uns">
-            <h2>Traditionelle Textilpflege & Maßschneiderei</h2>
-            <p>
-                Willkommen bei <strong>STS Schneiderei und Textilreinigung Sunbul</strong>. 
-                Mit langjähriger Erfahrung in Bornheim bieten wir Ihnen erstklassige Pflege für empfindliche 
-                Textilien sowie fachgerechte Änderungen und Reparaturen Ihrer Kleidungsstücke.
-            </p>
-            <ul>
-                <li><strong>25+ Jahre Erfahrung:</strong> Handwerkliches Können und modernste Pflegeverfahren.</li>
-                <li><strong>Express-Service:</strong> Schnelle Bearbeitung auf Anfrage möglich.</li>
-                <li><strong>Umweltfreundlich:</strong> Schonende und moderne Reinigungsmittel.</li>
-                <li><strong>Maßgeschneidert:</strong> Individuelle Anpassungen direkt vor Ort.</li>
-            </ul>
-        </section>
-
-        <!-- Leistungsübersicht -->
-        <section id="leistungen">
-            <h2>Unsere Leistungen</h2>
-            
-            <article>
-                <h3>Hochzeitskleider & Festgarderobe</h3>
-                <p>Schonende Spezialreinigung für Hochzeitskleider, Abendgarderobe und empfindliche Stoffe. Konservierung optional möglich.</p>
-                <p><strong>Preis:</strong> Auf Anfrage</p>
-            </article>
-
-            <article>
-                <h3>Chemische Reinigung & Anzugservice</h3>
-                <p>Fachgerechte Pflege für Business-Anzüge, Sakkos, Kleider und feine Jacken.</p>
-                <p><strong>Preis:</strong> Ab 8,90 €</p>
-            </article>
-
-            <article>
-                <h3>Hemden- & Bügelservice</h3>
-                <p>Makellos gewaschene und perfekt geglättete Hemden, Blusen und Tischwäsche.</p>
-                <p><strong>Preis:</strong> Ab 3,50 €</p>
-            </article>
-
-            <article>
-                <h3>Schneiderei & Reparaturen</h3>
-                <p>Kürzen, Weiten, Engerstellen sowie Reparaturen von Reißverschlüssen, Säumen und Futterstoffen.</p>
-                <p><strong>Preis:</strong> Individuell nach Aufwand</p>
-            </article>
-
-            <article>
-                <h3>Heimtextilien (Bettwäsche, Gardinen & Teppiche)</h3>
-                <p>Tiefenreinigung für Daunendecken, Kissen, Vorhänge, Gardinen und Teppichbeläge.</p>
-                <p><strong>Preise:</strong> Bettwäsche & Gardinen auf Anfrage | Teppichreinigung ab 24,50 €/m²</p>
-            </article>
-        </section>
-
-        <!-- Kundenbewertungen -->
-        <section id="bewertungen">
-            <h2>Das sagen unsere Kunden</h2>
-            
-            <blockquote>
-                <p>„Das Team hat alles in Bewegung gesetzt, um meinen Anzug schnellstmöglich zu reinigen. Ich bringe meine Business-Anzüge seit Jahren hierher. Immer perfekt gereinigt und gebügelt!“</p>
-                <cite>— D. J. (Anzug-Reinigung)</cite>
-            </blockquote>
-
-            <blockquote>
-                <p>„Ich habe mein Hochzeitskleid reinigen lassen und konnte es in nur vier Tagen wieder abholen. Das Kleid war blitzsauber und der Service sehr freundlich.“</p>
-                <cite>— A. S. B. (Hochzeitskleid-Reinigung)</cite>
-            </blockquote>
-
-            <blockquote>
-                <p>„Als Familie schätzen wir den zuverlässigen Wäscheservice sehr. Immer pünktlich und in einwandfreiem Zustand. Absolute Empfehlung!“</p>
-                <cite>— Familie Weber (Wäscheservice)</cite>
-            </blockquote>
-        </section>
-
-        <!-- Öffnungszeiten & Standort -->
-        <section id="oeffnungszeiten">
-            <h2>Öffnungszeiten & Standort</h2>
-            <address>
-                <strong>STS Schneiderei und Textilreinigung Sunbul</strong><br>
-                Königstraße 94<br>
-                53332 Bornheim<br>
-                Telefon: <a href="tel:022223775">02222 3775</a><br>
-                Mobil / WhatsApp: <a href="tel:017660743451">0176 60743451</a><br>
-                E-Mail: <a href="mailto:kontakt@textilreinigung-sunbul.de">kontakt@textilreinigung-sunbul.de</a>
-            </address>
-
-            <h3>Öffnungszeiten</h3>
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>Wochentag</th>
-                        <th>Zeiten</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Montag – Freitag</td>
-                        <td>09:00 – 18:00 Uhr</td>
-                    </tr>
-                    <tr>
-                        <td>Samstag</td>
-                        <td>09:00 – 13:00 Uhr</td>
-                    </tr>
-                    <tr>
-                        <td>Sonntag</td>
-                        <td>Geschlossen</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <!-- Kontaktformular -->
-        <section id="kontakt">
-            <h2>Kontaktieren Sie uns</h2>
-            <p>Haben Sie Fragen zu bestimmten Stoffen oder möchten Sie einen Auftrag vorab anfragen? Schreiben Sie uns:</p>
-            <form action="#" method="post">
-                <p>
-                    <label for="name">Ihr Name:</label><br>
-                    <input type="text" id="name" name="name" required>
-                </p>
-                <p>
-                    <label for="email">Ihre E-Mail-Adresse:</label><br>
-                    <input type="email" id="email" name="email" required>
-                </p>
-                <p>
-                    <label for="service">Gewünschte Dienstleistung:</label><br>
-                    <select id="service" name="service">
-                        <option value="reinigung">Textilreinigung</option>
-                        <option value="schneiderei">Schneiderei / Reparatur</option>
-                        <option value="brautkleid">Hochzeitskleid-Service</option>
-                        <option value="heimtextilien">Teppich- / Gardinenreinigung</option>
-                        <option value="sonstiges">Sonstige Anfrage</option>
-                    </select>
-                </p>
-                <p>
-                    <label for="nachricht">Ihre Nachricht:</label><br>
-                    <textarea id="nachricht" name="nachricht" rows="4" cols="40" required></textarea>
-                </p>
-                <button type="submit">Nachricht senden</button>
-            </form>
-        </section>
     </main>
 
-    <!-- Fußbereich -->
-    <footer>
-        <hr>
-        <p><strong>Servicegebiete:</strong> Bornheim | Bonn | Wesseling | Köln</p>
-        <p><small>Haftungsausschluss: Für Textilien ohne Pflegeetikett übernehmen wir keine Gewährleistung. Bei besonders empfindlichen oder stark verschmutzten Textilien bitten wir um vorherige Absprache.</small></p>
-        <p>&copy; 2026 STS Schneiderei und Textilreinigung Sunbul. Alle Rechte vorbehalten.</p>
-        <nav>
-            <a href="#">Impressum</a> | <a href="#">Datenschutzerklärung</a>
-        </nav>
+    <!-- 6. FOOTER -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-legal">
+                <p>&copy; 2026 STS Sunbul. Alle Rechte vorbehalten.</p>
+                <nav class="legal-links">
+                    <a href="#">Impressum</a>
+                    <a href="#">Datenschutzerklärung</a>
+                </nav>
+            </div>
+            <div class="footer-service">
+                <p><strong>Servicegebiete:</strong> Bornheim | Bonn | Wesseling | Köln</p>
+            </div>
+        </div>
     </footer>
 
+    <!-- 4. SCHWEBENDER WHATSAPP-BUTTON -->
+    <a href="https://wa.me/4917660743451?text=Hallo%20STS%20Team,%20ich%20habe%20eine%20Anfrage." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+        </svg>
+        <span>Chat starten</span>
+    </a>
+
+    <!-- =================================================================
+         5. JAVASCRIPT FÜR DAS MODAL-ROUTING
+         ================================================================= -->
+    <script>
+        function selectTopic(targetId) {
+            // 1. Overlay ausblenden
+            const modal = document.getElementById('welcome-modal');
+            modal.style.opacity = '0';
+            modal.style.pointerEvents = 'none';
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+
+            // 2. Sanft zum gewählten Bereich scrollen
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
 </body>
 </html>

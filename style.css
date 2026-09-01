@@ -1,21 +1,27 @@
-/* 1. GLOBALE FARBVARIABLEN & EINSTELLUNGEN */
+/* ==========================================================================
+   1. FARBEN & SYSTEM 
+   ========================================================================== */
 :root {
-    --color-primary: #12263F;      /* Deep Navy aus dem Logo */
-    --color-accent: #C5A880;       /* Sandgold für Highlights */
-    --color-accent-hover: #b09167; /* Dunkleres Gold beim Drüberfahren */
-    --color-bg: #FDFCFB;           /* Sanftes Cremeweiß */
-    --color-card-bg: #FFFFFF;      /* Reines Weiß für Karten */
-    --color-text: #2D3748;         /* Dunkles Anthrazit für Lesbarkeit */
-    --color-text-light: #718096;   /* Helles Grau für Untertitel */
+    --color-primary: #12263F;      
+    --color-accent: #C5A880;       
+    --color-accent-light: #e8dccb; 
+    --color-sage: #5B7065;         
+    --color-bg: #FDFCFB;           
+    --color-card-bg: #FFFFFF;      
+    --color-text: #2D3748;         
+    --color-text-muted: #718096;   
     
-    --font-heading: 'Playfair Display', serif;
+    --font-heading: 'Playfair Display', Georgia, serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
     
-    --shadow-soft: 0 4px 20px rgba(18, 38, 63, 0.06);
-    --border-radius: 8px;
+    --radius: 10px;
+    --shadow-card: 0 10px 30px rgba(18, 38, 63, 0.08);
 }
 
-/* 2. BASIS-RESET (Entfernt ungewollte Standardabstände des Browsers) */
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -28,32 +34,130 @@ body {
     font-family: var(--font-body);
     line-height: 1.6;
 }
-/* 3. LAYOUT-HELFER */
+
 .container {
-    max-width: 1200px;
+    max-width: 1240px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 32px;
 }
 
-/* 4. NAVBAR STYLING */
+/* ==========================================================================
+   2. VOLLBILD WILLKOMMENS-MODAL
+   ========================================================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(18, 38, 63, 0.75);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: opacity 0.3s ease;
+}
+
+.modal-card {
+    background-color: var(--color-card-bg);
+    border-radius: 16px;
+    max-width: 800px;
+    width: 100%;
+    padding: 55px 45px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--color-accent);
+}
+
+.modal-logo {
+    height: 95px;
+    width: auto;
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    font-family: var(--font-heading);
+    font-size: 2.6rem;
+    color: var(--color-primary);
+    margin-bottom: 6px;
+}
+
+.modal-subtitle {
+    font-size: 1rem;
+    color: var(--color-accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 25px;
+}
+
+.modal-question {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.modal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.modal-choice-btn {
+    background-color: var(--color-bg);
+    border: 1.5px solid var(--color-accent-light);
+    padding: 24px 18px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.25s ease;
+}
+
+.modal-choice-btn strong {
+    color: var(--color-primary);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.modal-choice-btn small {
+    color: var(--color-text-muted);
+    font-size: 0.88rem;
+    line-height: 1.3;
+}
+
+.modal-choice-btn:hover {
+    border-color: var(--color-accent);
+    background-color: #FFFFFF;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(197, 168, 128, 0.2);
+}
+
+/* ==========================================================================
+   3. NAVBAR
+   ========================================================================== */
 .navbar {
     background-color: var(--color-card-bg);
-    border-bottom: 1px solid rgba(197, 168, 128, 0.2); /* Dezent goldene Linie */
+    border-bottom: 1px solid var(--color-accent-light);
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: var(--shadow-soft);
 }
 
 .navbar-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 20px;
+    padding: 12px 24px;
 }
 
 .brand-logo img {
-    height: 60px; /* Saubere Skalierung für das Logo */
+    height: 60px;
     width: auto;
     display: block;
 }
@@ -61,7 +165,7 @@ body {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 25px; /* Abstand zwischen den Menüpunkten */
+    gap: 28px;
 }
 
 .nav-links a {
@@ -76,120 +180,306 @@ body {
     color: var(--color-accent);
 }
 
-/* 5. BUTTONS */
-.btn-primary {
-    background-color: var(--color-primary);
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: var(--border-radius);
+.nav-btn {
+    color: var(--color-primary);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 0.9rem;
+    padding: 8px 18px;
+    border: 1px solid var(--color-accent);
+    border-radius: var(--radius);
     transition: all 0.2s ease;
 }
 
-.btn-primary:hover {
+.nav-btn:hover {
     background-color: var(--color-accent);
     color: #ffffff;
 }
-/* 6. HERO-BEREICH */
+
+/* ==========================================================================
+   4. HERO
+   ========================================================================== */
 .hero {
-    padding: 80px 0;
+    padding: 100px 0 80px 0;
     text-align: center;
     background: linear-gradient(180deg, #FFFFFF 0%, var(--color-bg) 100%);
-    border-bottom: 1px solid rgba(197, 168, 128, 0.15);
-}
-
-.hero-content {
-    max-width: 800px; /* Hält den Text zentriert und verhindert zu lange Zeilen */
+    border-bottom: 1px solid var(--color-accent-light);
 }
 
 .badge {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 10px;
     display: inline-block;
-    background-color: rgba(197, 168, 128, 0.15);
-    color: var(--color-primary);
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-    border: 1px solid rgba(197, 168, 128, 0.3);
 }
 
-.hero h1 {
+.hero-title {
     font-family: var(--font-heading);
-    font-size: 2.8rem;
+    font-size: 3.4rem;
     color: var(--color-primary);
-    margin-bottom: 18px;
-    line-height: 1.2;
+    margin-bottom: 16px;
 }
 
-.hero-subtitle {
-    font-size: 1.15rem;
-    color: var(--color-text-light);
-    margin-bottom: 35px;
-}
-
-.hero-actions {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-/* Sekundärer Button (Umrandung statt Füllung) */
-.btn-secondary {
-    background-color: transparent;
-    color: var(--color-primary);
-    border: 2px solid var(--color-primary);
-    padding: 10px 20px;
-    border-radius: var(--border-radius);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: all 0.2s ease;
-}
-
-.btn-secondary:hover {
-    border-color: var(--color-accent);
+.hero-title span {
+    font-style: italic;
     color: var(--color-accent);
 }
-/* 7. VERTRAUENS-LEISTE (CSS GRID) */
-.trust-bar {
-    padding: 40px 0;
-    background-color: var(--color-card-bg);
-    border-bottom: 1px solid rgba(197, 168, 128, 0.15);
+
+.hero-motto {
+    font-size: 1.35rem;
+    color: var(--color-text-muted);
+    font-style: italic;
 }
 
-.trust-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+/* ==========================================================================
+   5. 50/50 SPLIT-SCREEN THEMEN (EDGE-TO-EDGE)
+   ========================================================================== */
+.split-section {
+    display: flex;
+    min-height: 80vh; /* Zwingt die Sektion, 80% der Bildschirmhöhe einzunehmen = mehr scrollen! */
+    width: 100%;
+}
+
+.split-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.split-text {
+    flex: 1;
+    padding: 10% 8% 10% 12%; /* Viel Luft zum Atmen, drückt den Text schön zusammen */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.split-section.reverse .split-text {
+    padding: 10% 12% 10% 8%; /* Spiegelt das Padding für die andere Seite */
+}
+
+.split-image {
+    flex: 1;
+    display: flex;
+}
+
+.split-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: cover; /* Keine runden Ecken mehr, klebt direkt am Rand! */
+    border: block;
+}
+
+/* Die neuen Feature-Icons unter dem Text */
+.feature-grid {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.feature-icon {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+/* Macht die SVG-Linien zu edlem Sandgold */
+.feature-icon svg {
+    color: var(--color-accent);
+}
+
+.feature-text {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--color-primary);
+}
+/* ==========================================================================
+   6. KONTAKT & FOOTER (DARK THEME)
+   ========================================================================== */
+.contact-section {
+    padding: 100px 0;
+    background-color: var(--color-primary); /* Deep Navy Hintergrund */
+    color: var(--color-bg); /* Weiße Schrift */
+}
+
+.contact-section h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--color-bg);
+    margin-bottom: 25px;
+}
+
+.contact-grid {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-address {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 35px;
+    color: var(--color-accent-light);
+}
+
+.hours-list {
+    background-color: rgba(253, 252, 251, 0.05); /* Leicht transparenter Kasten */
+    border: 1px solid rgba(197, 168, 128, 0.2);
+    border-radius: var(--radius);
+    padding: 25px;
+}
+
+.hour-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(253, 252, 251, 0.1);
+    font-size: 0.95rem;
+}
+
+.hour-row:last-child {
+    border-bottom: none;
+}
+
+.hour-row.closed {
+    color: var(--color-accent);
+}
+
+.contact-map {
+    flex: 1;
+    display: flex;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 350px;
+    background-color: rgba(253, 252, 251, 0.05);
+    border: 1px solid var(--color-accent);
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-accent);
+}
+
+/* FOOTER */
+.site-footer {
+    background-color: #0A1626; /* Noch dunkleres Navy für Tiefe */
+    color: var(--color-text-muted);
+    padding: 30px 0;
+    font-size: 0.85rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 20px;
+}
+
+.legal-links {
+    margin-top: 5px;
+}
+
+.legal-links a {
+    color: var(--color-accent);
+    text-decoration: none;
+    margin-right: 15px;
+    transition: color 0.2s ease;
+}
+
+.legal-links a:hover {
+    color: var(--color-bg);
+}
+/* Mobil-Anpassung */
+@media (max-width: 900px) {
+    .split-section, .split-section.reverse {
+        flex-direction: column;
+    }
+    .split-text, .split-section.reverse .split-text {
+        padding: 50px 24px;
+    }
+    .split-image {
+        min-height: 400px;
+    }
+}
+/* ==========================================================================
+   6. KONTAKT & ZEITEN
+   ========================================================================== */
+.contact-section {
+    padding: 80px 0;
     text-align: center;
 }
 
-.trust-item {
-    padding: 20px;
-    border-radius: var(--border-radius);
-    background-color: var(--color-bg);
-    border: 1px solid rgba(197, 168, 128, 0.2);
-    box-shadow: var(--shadow-soft);
+.contact-box {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-accent-light);
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: var(--shadow-card);
 }
 
-.trust-icon {
-    font-size: 2rem;
-    display: inline-block;
+.contact-box h2 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
     margin-bottom: 10px;
 }
 
-.trust-item h3 {
-    font-size: 1.1rem;
-    color: var(--color-primary);
-    margin-bottom: 6px;
-    font-family: var(--font-body);
-    font-weight: 700;
+.hours-badge {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: var(--color-bg);
+    border-radius: var(--radius);
+    border: 1px solid var(--color-accent-light);
+    font-size: 0.9rem;
 }
 
-.trust-item p {
-    font-size: 0.85rem;
-    color: var(--color-text-light);
+/* ==========================================================================
+   7. WHATSAPP BUTTON
+   ========================================================================== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: var(--color-primary);
+    color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border: 1px solid var(--color-accent);
+    z-index: 990;
+    transition: transform 0.2s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   8. MOBIL-ANPASSUNG
+   ========================================================================== */
+@media (max-width: 768px) {
+    .modal-grid { grid-template-columns: 1fr; }
+    .story-grid, .story-grid.row-reverse { flex-direction: column; }
+    .nav-links { display: none; }
 }
