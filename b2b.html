@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B2B & Wäscheservice Bornheim | STS Gewerbekunden & Logistik</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. TOP-BAR -->
+    <aside class="top-bar">
+        <div class="container">
+            <div class="top-bar-info">
+                <span>Königstraße 94, 53332 Bornheim</span>
+                <span>Mo.–Fr. 08:30–18:00 | Sa. 09:00–13:00</span>
+            </div>
+            <div class="top-bar-contact">
+                <span>Tel: <a href="tel:02222929944">02222 929944</a></span>
+                <a href="https://wa.me/4915759547628" target="_blank" rel="noopener">WhatsApp Direkt</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- 2. HEADER -->
+    <header class="main-header">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">STS <span>Bornheim</span></a>
+            </div>
+
+            <nav aria-label="Hauptnavigation">
+                <ul class="nav-menu">
+                    <li><a href="textilreinigung.html" class="nav-link">Textilreinigung</a></li>
+                    <li><a href="schneiderei.html" class="nav-link">Schneiderei</a></li>
+                    <li><a href="kuscheltier.html" class="nav-link">Kuscheltier-Klinik</a></li>
+                    <li><a href="b2b.html" class="nav-link active">B2B & Gewerbe</a></li>
+                    <li><a href="kontakt.html" class="nav-link">Kontakt & Anfahrt</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="tel:02222929944" class="header-cta">Jetzt anrufen</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. DETAILSEITE INHALT -->
+    <main>
+        <!-- B2B Hero -->
+        <section class="hero" style="padding: 50px 0 40px;">
+            <div class="container hero-content">
+                <span class="badge">Gewerbeservice & Logistik</span>
+                <h1 class="hero-title">Textilpflege für Unternehmen</h1>
+                <p class="hero-motto">Zuverlässiger Hol- & Bringservice, transparente Abrechnung und maßgeschneiderte Rahmenverträge.</p>
+            </div>
+        </section>
+
+        <!-- Zielbranchen Grid -->
+        <section class="container" style="padding: 60px 20px;">
+            <div style="text-align: center; max-width: 700px; margin: 0 auto 40px;">
+                <span class="section-tag">Für jedes Business</span>
+                <h2>Lösungen für Ihre Branche</h2>
+                <p style="color: var(--text-muted); margin-top: 8px;">
+                    Wir entlasten Ihren Betriebsalltag mit pünktlicher Logistik im Raum Bornheim, Bonn und Köln/Bonn:
+                </p>
+            </div>
+
+            <div class="price-grid">
+                <div class="price-card">
+                    <h3>Gastronomie & Hotellerie</h3>
+                    <p class="price-val">Flexible Rhythmen</p>
+                    <p class="price-desc">Tischdecken, Servietten, Schürzen, Kochjacken und Bettwäsche – hygienisch rein gemangelt und faltenfrei gelegt.</p>
+                </div>
+
+                <div class="price-card">
+                    <h3>Praxen & Kanzleien</h3>
+                    <p class="price-val">Höchste Hygiene</p>
+                    <p class="price-desc">Kittel, Praxiskleidung, Handtücher und Liegenabdeckungen nach strengen Hygieneanforderungen gepflegt.</p>
+                </div>
+
+                <div class="price-card">
+                    <h3>Handwerk & Industrie</h3>
+                    <p class="price-val">Robuste Pflege</p>
+                    <p class="price-desc">Arbeitshosen, Overalls und Sicherheitskleidung: Beseitigung von Ölen, Fetten und hartnäckigen Rückständen.</p>
+                </div>
+
+                <div class="price-card highlight-card">
+                    <h3>Hol- & Bringservice</h3>
+                    <p class="price-val">Pünktliche Touren</p>
+                    <p class="price-desc">Feste Abholtage nach Absprache direkt an Ihrem Unternehmensstandort. Kein eigener Transportaufwand für Ihr Team.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- B2B Terminformular -->
+        <section class="bg-alt" style="padding: 60px 20px;">
+            <div class="container">
+                <div class="inquiry-card" style="max-width: 760px;">
+                    <span class="section-tag">Direkte Terminabstimmung</span>
+                    <h2>B2B-Anfrage einreichen</h2>
+                    <p class="inquiry-sub">Wählen Sie Ihr Anliegen: Ob persönliches Gespräch vor Ort oder Erstabholung Ihrer Textilien.</p>
+
+                    <form class="inquiry-form" id="b2b-form" onsubmit="handleB2BSubmit(event)">
+                        <!-- Terminart-Auswahl -->
+                        <div class="form-group">
+                            <label for="b2b-type">Art des Anliegens *</label>
+                            <select id="b2b-type" required>
+                                <option value="" disabled selected>Bitte wählen...</option>
+                                <option value="Gesprächstermin">Unverbindlicher Kennenlern- & Besprechungstermin</option>
+                                <option value="Abholung">Direkte Erstabholung anfordern</option>
+                            </select>
+                        </div>
+
+                        <!-- Firmen- & Kontaktdaten -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="b2b-company">Unternehmen / Praxis / Betrieb *</label>
+                                <input type="text" id="b2b-company" placeholder="z. B. Hotel Rheintal" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="b2b-contact-person">Ansprechpartner *</label>
+                                <input type="text" id="b2b-contact-person" placeholder="Vor- und Nachname" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="b2b-email">Geschäftliche E-Mail *</label>
+                                <input type="email" id="b2b-email" placeholder="kontakt@unternehmen.de" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="b2b-phone">Telefonnummer für Rückfragen *</label>
+                                <input type="tel" id="b2b-phone" placeholder="02222 / ..." required>
+                            </div>
+                        </div>
+
+                        <!-- Adresse & Logistik -->
+                        <div class="form-group">
+                            <label for="b2b-address">Standort / Abholadresse *</label>
+                            <input type="text" id="b2b-address" placeholder="Straße, Hausnummer, PLZ & Ort" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="b2b-date">Wunschtermin *</label>
+                                <input type="date" id="b2b-date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="b2b-time">Bevorzugtes Zeitfenster</label>
+                                <select id="b2b-time">
+                                    <option value="Vormittags (09:00 - 12:00 Uhr)">Vormittags (09:00 – 12:00 Uhr)</option>
+                                    <option value="Nachmittags (13:00 - 17:00 Uhr)">Nachmittags (13:00 – 17:00 Uhr)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="b2b-details">Geschätzte Menge & Art der Textilien</label>
+                            <textarea id="b2b-details" rows="3" placeholder="z. B. ca. 50 Tischdecken wöchentlich, Berufsbekleidung 10 Mitarbeiter..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn" style="background-color: var(--color-primary); margin-top: 10px;">
+                            Anfrage absenden (E-Mail generieren)
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 4. FOOTER -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-legal">
+                <p>&copy; 2026 STS Textilreinigung & Schneiderei. Alle Rechte vorbehalten.</p>
+                <nav class="legal-links">
+                    <a href="impressum.html">Impressum</a>
+                    <a href="datenschutz.html">Datenschutzerklärung</a>
+                </nav>
+            </div>
+            <div class="footer-service">
+                <p><strong>Servicegebiete:</strong> Bornheim | Bonn | Wesseling | Umland</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCHWEBENDER WHATSAPP-BUTTON -->
+    <a href="https://wa.me/4915759547628?text=Hallo%20STS%20Team,%20ich%20habe%20eine%20B2B-Anfrage." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+        </svg>
+        <span>Chat starten</span>
+    </a>
+
+    <!-- JAVASCRIPT: E-Mail-Workflow ohne Fremd-Backend -->
+    <script>
+        function handleB2BSubmit(e) {
+            e.preventDefault();
+
+            const type = document.getElementById('b2b-type').value;
+            const company = document.getElementById('b2b-company').value;
+            const person = document.getElementById('b2b-contact-person').value;
+            const email = document.getElementById('b2b-email').value;
+            const phone = document.getElementById('b2b-phone').value;
+            const address = document.getElementById('b2b-address').value;
+            const date = document.getElementById('b2b-date').value;
+            const time = document.getElementById('b2b-time').value;
+            const details = document.getElementById('b2b-details').value;
+
+            const subject = encodeURIComponent(`B2B-Anfrage: ${type} - ${company}`);
+            const body = encodeURIComponent(
+                `Guten Tag STS Team,\n\n` +
+                `Hiermit frage ich folgenden Termin an:\n\n` +
+                `Art des Anliegens: ${type}\n` +
+                `Firma / Betrieb: ${company}\n` +
+                `Ansprechpartner: ${person}\n` +
+                `Telefon: ${phone}\n` +
+                `E-Mail: ${email}\n` +
+                `Standort / Adresse: ${address}\n` +
+                `Wunschtermin: ${date} (${time})\n\n` +
+                `Details / Textilmengen:\n${details}\n\n` +
+                `Bitte um verbindliche Bestätigung per E-Mail.`
+            );
+
+            // Öffnet das vorbefüllte Standard-E-Mail-Programm des Nutzers
+            window.location.href = `mailto:info@sts-textilreinigung.de?subject=${subject}&body=${body}`;
+        }
+    </script>
+
+</body>
+</html>
