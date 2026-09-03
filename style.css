@@ -693,3 +693,39 @@ h1, h2, h3, h4 {
     display: none !important; /* Mobil bewusst ausgeblendet laut Spezifikation */
   }
 }
+.header-logo {
+  max-height: 50px;
+  width: auto;
+  display: block;
+}
+/* Scroll-to-Top Button */
+.scroll-top-btn {
+  display: none; /* Am Anfang unsichtbar */
+  position: fixed;
+  bottom: 24px;
+  right: 180px; /* Lässt Platz für den WhatsApp-Button */
+  background-color: #ffffff;
+  color: var(--color-primary);
+  border: 1px solid rgba(15, 30, 54, 0.15);
+  border-radius: 4px;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  z-index: 990;
+}
+
+.scroll-top-btn:hover {
+  transform: translateY(-2px);
+  border-color: #C5A880; /* Sandgold-Akzent beim Drüberfahren */
+}
+
+/* Auf dem Smartphone verstecken */
+@media (max-width: 768px) {
+  .scroll-top-btn {
+    display: none !important;
+  }
+}

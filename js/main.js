@@ -37,3 +37,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+document.addEventListener('DOMContentLoaded', () => {
+  const scrollTopBtn = document.querySelector('.scroll-top-btn');
+
+  if (scrollTopBtn) {
+    // Button ein- und ausblenden beim Scrollen
+    window.addEventListener('scroll', () => {
+      if (window.innerWidth > 768 && window.scrollY > 300) {
+        scrollTopBtn.style.display = 'flex';
+      } else {
+        scrollTopBtn.style.display = 'none';
+      }
+    });
+
+    // Nach oben scrollen beim Klick
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+});
