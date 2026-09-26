@@ -729,3 +729,13 @@ h1, h2, h3, h4 {
     display: none !important;
   }
 }
+/* Abkürzung STS unter dem Firmennamen */
+.hero-subtitle {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--color-accent);
+  letter-spacing: 3px;
+  margin-top: 6px;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
