@@ -739,3 +739,15 @@ h1, h2, h3, h4 {
   margin-bottom: 18px;
   font-weight: 600;
 }
+/* ==========================================================================
+   ELEGANTES AMPERSAND (Nur für große Überschriften)
+   ========================================================================== */
+/* Wirkt nur in h1, h2, h3 und im Hero-Titel */
+h1 .amp, h2 .amp, h3 .amp, .hero-title .amp {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-accent); /* Dein Sandgold */
+  padding: 0 4px;
+  display: inline-block;
+}
