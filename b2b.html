@@ -3,14 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B2B & Wäscheservice Bornheim | STS Gewerbekunden & Logistik</title>
+    <title>B2B & Wäscheservice | STS Textilreinigung Bornheim</title>
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -24,16 +21,18 @@
             </div>
             <div class="top-bar-contact">
                 <span>Tel: <a href="tel:02222929944">02222 929944</a></span>
-                <a href="https://wa.me/4915759547628" target="_blank" rel="noopener">WhatsApp Direkt</a>
+                <a href="mailto:miassarsunbul1975@gmail.com">E-Mail senden</a>
             </div>
         </div>
     </aside>
 
-    <!-- 2. HEADER -->
+    <!-- 2. HAUPT-HEADER -->
     <header class="main-header">
         <div class="container nav-container">
             <div class="logo">
-                <a href="index.html">STS <span>Bornheim</span></a>
+                <a href="index.html">
+                    <img src="images/logo.png.png" alt="STS Logo" class="header-logo">
+                </a>
             </div>
 
             <nav aria-label="Hauptnavigation">
@@ -41,139 +40,208 @@
                     <li><a href="textilreinigung.html" class="nav-link">Textilreinigung</a></li>
                     <li><a href="schneiderei.html" class="nav-link">Schneiderei</a></li>
                     <li><a href="kuscheltier.html" class="nav-link">Kuscheltier-Klinik</a></li>
-                    <li><a href="b2b.html" class="nav-link active">B2B & Gewerbe</a></li>
-                    <li><a href="kontakt.html" class="nav-link">Kontakt & Anfahrt</a></li>
+                    <li><a href="b2b.html" class="nav-link">B2B &amp; Gewerbe</a></li>
+                    <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
                 </ul>
             </nav>
 
-            <div class="header-actions">
-                <a href="tel:02222929944" class="header-cta">Jetzt anrufen</a>
-            </div>
+            <button class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
         </div>
     </header>
 
-    <!-- 3. DETAILSEITE INHALT -->
+    <!-- 3. HAUPTINHALT B2B -->
     <main>
-        <!-- B2B Hero -->
-        <section class="hero" style="padding: 50px 0 40px;">
-            <div class="container hero-content">
-                <span class="badge">Gewerbeservice & Logistik</span>
-                <h1 class="hero-title">Textilpflege für Unternehmen</h1>
-                <p class="hero-motto">Zuverlässiger Hol- & Bringservice, transparente Abrechnung und maßgeschneiderte Rahmenverträge.</p>
-            </div>
-        </section>
-
-        <!-- Zielbranchen Grid -->
-        <section class="container" style="padding: 60px 20px;">
-            <div style="text-align: center; max-width: 700px; margin: 0 auto 40px;">
-                <span class="section-tag">Für jedes Business</span>
-                <h2>Lösungen für Ihre Branche</h2>
-                <p style="color: var(--text-muted); margin-top: 8px;">
-                    Wir entlasten Ihren Betriebsalltag mit pünktlicher Logistik im Raum Bornheim, Bonn und Köln/Bonn:
-                </p>
-            </div>
-
-            <div class="price-grid">
-                <div class="price-card">
-                    <h3>Gastronomie & Hotellerie</h3>
-                    <p class="price-val">Flexible Rhythmen</p>
-                    <p class="price-desc">Tischdecken, Servietten, Schürzen, Kochjacken und Bettwäsche – hygienisch rein gemangelt und faltenfrei gelegt.</p>
-                </div>
-
-                <div class="price-card">
-                    <h3>Praxen & Kanzleien</h3>
-                    <p class="price-val">Höchste Hygiene</p>
-                    <p class="price-desc">Kittel, Praxiskleidung, Handtücher und Liegenabdeckungen nach strengen Hygieneanforderungen gepflegt.</p>
-                </div>
-
-                <div class="price-card">
-                    <h3>Handwerk & Industrie</h3>
-                    <p class="price-val">Robuste Pflege</p>
-                    <p class="price-desc">Arbeitshosen, Overalls und Sicherheitskleidung: Beseitigung von Ölen, Fetten und hartnäckigen Rückständen.</p>
-                </div>
-
-                <div class="price-card highlight-card">
-                    <h3>Hol- & Bringservice</h3>
-                    <p class="price-val">Pünktliche Touren</p>
-                    <p class="price-desc">Feste Abholtage nach Absprache direkt an Ihrem Unternehmensstandort. Kein eigener Transportaufwand für Ihr Team.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- B2B Terminformular -->
-        <section class="bg-alt" style="padding: 60px 20px;">
+        <!-- Intro Hero -->
+        <section class="page-hero" style="background-color: var(--color-primary); padding: 60px 20px; text-align: center;">
             <div class="container">
-                <div class="inquiry-card" style="max-width: 760px;">
-                    <span class="section-tag">Direkte Terminabstimmung</span>
-                    <h2>B2B-Anfrage einreichen</h2>
-                    <p class="inquiry-sub">Wählen Sie Ihr Anliegen: Ob persönliches Gespräch vor Ort oder Erstabholung Ihrer Textilien.</p>
+                <h1 style="color: #ffffff; margin-bottom: 15px;">B2B <span class="amp">&amp;</span> Gewerbe</h1>
+                <p style="font-size: 1.2rem; max-width: 650px; margin: 0 auto; color: rgba(255,255,255,0.9);">Ihr zuverlässiger Textilpartner für Gastronomie, Hotellerie, Praxen und Unternehmen.</p>
+            </div>
+        </section>
+        <!-- Abholservice & Van Illustration (Punkte 86, 87, 88, 89) -->
+        <section style="background-color: #f9f8f6; padding: 80px 20px;">
+            <div class="container" style="max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px;">
+                
+<!-- SVG Van mit Bewegungslinien (Vergrößert) -->
+                <div style="flex: 1; min-width: 250px; text-align: center;">
+                    <svg width="100%" style="max-width: 380px; height: auto;" viewBox="0 0 240 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Bewegungslinien / Wind -->
+                        <path d="M10 80 L50 80" stroke="var(--color-accent)" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M25 60 L45 60" stroke="var(--color-accent)" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M15 100 L40 100" stroke="var(--color-accent)" stroke-width="3" stroke-linecap="round"/>
+                        
+                        <!-- Der Van -->
+                        <!-- Kastenaufbau -->
+                        <path d="M50 40 h 100 v 70 h -100 z" fill="var(--color-primary)"/>
+                        <path d="M50 40 h 100 v 70 h -100 z" fill="url(#vanGradient)"/>
+                        <!-- Fahrerkabine -->
+                        <path d="M150 60 h 30 c 15 0 25 10 25 25 v 25 h -55 z" fill="var(--color-primary)"/>
+                        <path d="M150 60 h 30 c 15 0 25 10 25 25 v 25 h -55 z" fill="url(#vanGradient)"/>
+                        <!-- Fenster -->
+                        <path d="M155 65 h 22 c 8 0 13 5 13 15 v 10 h -35 z" fill="#ffffff" opacity="0.9"/>
+                        
+                        <!-- ECHTES LOGO AUF DEM VAN (Vergrößert) -->
+                        <image href="images/logo-gold.png" x="72" y="47" width="55" height="55" />
 
-                    <form class="inquiry-form" id="b2b-form" onsubmit="handleB2BSubmit(event)">
-                        <!-- Terminart-Auswahl -->
-                        <div class="form-group">
-                            <label for="b2b-type">Art des Anliegens *</label>
-                            <select id="b2b-type" required>
-                                <option value="" disabled selected>Bitte wählen...</option>
-                                <option value="Gesprächstermin">Unverbindlicher Kennenlern- & Besprechungstermin</option>
-                                <option value="Abholung">Direkte Erstabholung anfordern</option>
-                            </select>
+                        <!-- Räder -->
+                        <circle cx="80" cy="115" r="15" fill="#333"/>
+                        <circle cx="80" cy="115" r="7" fill="#ccc"/>
+                        <circle cx="175" cy="115" r="15" fill="#333"/>
+                        <circle cx="175" cy="115" r="7" fill="#ccc"/>
+                        
+                        <!-- Farbverlauf für leichten 3D-Effekt -->
+                        <defs>
+                            <linearGradient id="vanGradient" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.1"/>
+                                <stop offset="100%" stop-color="#000000" stop-opacity="0.2"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+
+                <!-- Text-Bereich: Flexibler Abholprozess (86) -->
+                <div style="flex: 2; min-width: 300px;">
+                    <h3 style="color: var(--color-primary); font-size: 1.8rem; margin-bottom: 15px;">Unser Hol- <span class="amp">&amp;</span> Bringservice</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 20px;">
+                        Damit Sie sich voll und ganz auf Ihr Kerngeschäft konzentrieren können, bieten wir für unsere Geschäftskunden in Bornheim und Umgebung einen komfortablen Logistikservice an. 
+                    </p>
+                    <p style="font-size: 1rem; line-height: 1.7; margin-bottom: 0;">
+                        Ganz gleich, ob Sie einmalig Großmengen reinigen lassen möchten oder an regelmäßigen Zyklen interessiert sind – wir passen uns Ihrem Bedarf an. <strong>Wir prüfen jede Anfrage individuell und vereinbaren Abholfenster, die sich nahtlos in Ihren Betriebsablauf integrieren lassen.</strong>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+<!-- B2B-Konditionen (Punkt 93) -->
+        <section style="padding: 60px 20px;">
+            <div class="container" style="max-width: 900px; margin: 0 auto; text-align: center;">
+                <span class="section-tag">Ihre Vorteile</span>
+                <h2 style="margin-bottom: 40px;">Individuelle B2B-Konditionen</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: left;">
+                    
+                    <div style="background: #fff; padding: 25px; border-left: 4px solid var(--color-accent); box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+                        <h4 style="color: var(--color-primary); margin-bottom: 10px;">Attraktive Staffelpreise</h4>
+                        <p style="font-size: 0.95rem; margin: 0;">Profitieren Sie von maßgeschneiderten Rabatten bei regelmäßigen Aufträgen oder großen Wäschemengen.</p>
+                    </div>
+                    
+                    <div style="background: #fff; padding: 25px; border-left: 4px solid var(--color-accent); box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+                        <h4 style="color: var(--color-primary); margin-bottom: 10px;">Monatliche Abrechnung</h4>
+                        <p style="font-size: 0.95rem; margin: 0;">Transparente und bequeme Rechnungsstellung am Monatsende – optimiert für Ihre Buchhaltung.</p>
+                    </div>
+                    
+                    <div style="background: #fff; padding: 25px; border-left: 4px solid var(--color-accent); box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+                        <h4 style="color: var(--color-primary); margin-bottom: 10px;">Priorisierte Bearbeitung</h4>
+                        <p style="font-size: 0.95rem; margin: 0;">Als Geschäftskunde werden Ihre Aufträge bevorzugt behandelt, um schnelle Durchlaufzeiten zu garantieren.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- Abholtermin-Anfrage (Punkte 96, 97, 98, 100) -->
+        <section style="padding: 80px 20px; background-color: #f9f8f6;">
+            <div class="container" style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <span class="section-tag">Logistikplanung</span>
+                <h2 style="margin-bottom: 20px;">Unverbindlichen Abholtermin anfragen</h2>
+                <p style="margin-bottom: 30px; color: var(--text-muted); font-size: 1.05rem;">
+                    Wählen Sie hier Ihr Wunschdatum aus. <br><strong>Wichtig:</strong> Dies ist eine Terminanfrage und keine verbindliche Buchung. Wir prüfen unsere Kapazitäten und bestätigen Ihnen den Termin zeitnah.
+                </p>
+                
+                <div style="background: #ffffff; padding: 40px; border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); text-align: left;">
+                    
+                    <!-- Formular sendet an die STS-E-Mail (Punkt 100) -->
+                    <form action="mailto:sts.textilreinigung@gmail.com" method="post" enctype="text/plain" style="display: flex; flex-direction: column; gap: 20px;">
+                        
+                        <div>
+                            <label for="b2b-firma" style="display: block; margin-bottom: 5px; font-weight: 600; color: var(--color-primary);">Firmenname / Einrichtung *</label>
+                            <input type="text" id="b2b-firma" name="Firma" required style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-family: inherit;">
                         </div>
 
-                        <!-- Firmen- & Kontaktdaten -->
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="b2b-company">Unternehmen / Praxis / Betrieb *</label>
-                                <input type="text" id="b2b-company" placeholder="z. B. Hotel Rheintal" required>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                            <div>
+                                <label for="b2b-name" style="display: block; margin-bottom: 5px; font-weight: 600; color: var(--color-primary);">Ansprechpartner *</label>
+                                <input type="text" id="b2b-name" name="Name" required style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-family: inherit;">
                             </div>
-                            <div class="form-group">
-                                <label for="b2b-contact-person">Ansprechpartner *</label>
-                                <input type="text" id="b2b-contact-person" placeholder="Vor- und Nachname" required>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="b2b-email">Geschäftliche E-Mail *</label>
-                                <input type="email" id="b2b-email" placeholder="kontakt@unternehmen.de" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="b2b-phone">Telefonnummer für Rückfragen *</label>
-                                <input type="tel" id="b2b-phone" placeholder="02222 / ..." required>
+                            <div>
+                                <label for="b2b-tel" style="display: block; margin-bottom: 5px; font-weight: 600; color: var(--color-primary);">Telefonnummer *</label>
+                                <input type="tel" id="b2b-tel" name="Telefon" required style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-family: inherit;">
                             </div>
                         </div>
 
-                        <!-- Adresse & Logistik -->
-                        <div class="form-group">
-                            <label for="b2b-address">Standort / Abholadresse *</label>
-                            <input type="text" id="b2b-address" placeholder="Straße, Hausnummer, PLZ & Ort" required>
+                        <div>
+                            <!-- Echtes Datumsfeld (Punkt 97) -->
+                            <label for="b2b-datum" style="display: block; margin-bottom: 5px; font-weight: 600; color: var(--color-primary);">Wunschdatum für Abholung *</label>
+                            <input type="date" id="b2b-datum" name="Wunschdatum" required style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-family: inherit;">
                         </div>
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="b2b-date">Wunschtermin *</label>
-                                <input type="date" id="b2b-date" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="b2b-time">Bevorzugtes Zeitfenster</label>
-                                <select id="b2b-time">
-                                    <option value="Vormittags (09:00 - 12:00 Uhr)">Vormittags (09:00 – 12:00 Uhr)</option>
-                                    <option value="Nachmittags (13:00 - 17:00 Uhr)">Nachmittags (13:00 – 17:00 Uhr)</option>
-                                </select>
-                            </div>
+                        <div>
+                            <label for="b2b-notiz" style="display: block; margin-bottom: 5px; font-weight: 600; color: var(--color-primary);">Ungefähre Menge & Art der Textilien</label>
+                            <textarea id="b2b-notiz" name="Notiz" rows="3" placeholder="z. B. 30 Tischdecken, 10 Kochjacken..." style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-family: inherit; resize: vertical;"></textarea>
                         </div>
 
-                        <div class="form-group">
-                            <label for="b2b-details">Geschätzte Menge & Art der Textilien</label>
-                            <textarea id="b2b-details" rows="3" placeholder="z. B. ca. 50 Tischdecken wöchentlich, Berufsbekleidung 10 Mitarbeiter..."></textarea>
-                        </div>
-
-                        <button type="submit" class="submit-btn" style="background-color: var(--color-primary); margin-top: 10px;">
-                            Anfrage absenden (E-Mail generieren)
+                        <button type="submit" class="header-cta" style="border: none; cursor: pointer; width: 100%; font-size: 1.1rem; padding: 15px; margin-top: 10px;">
+                            Termin unverbindlich anfragen
                         </button>
                     </form>
                 </div>
             </div>
         </section>
+
+        <!-- Gesprächstermin-Anfrage (Punkte 91 & 95) -->
+        <section style="background-color: var(--color-primary); color: #ffffff; padding: 80px 20px; text-align: center;">
+            <div class="container" style="max-width: 700px; margin: 0 auto;">
+                <h2 style="color: #ffffff; margin-bottom: 20px;">Lassen Sie uns über Ihren Bedarf sprechen</h2>
+                <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 35px;">
+                    Jedes Unternehmen hat eigene Anforderungen an Textilpflege und Logistik. Vereinbaren Sie einen unverbindlichen Gesprächstermin, damit wir ein passgenaues Angebot für Sie ausarbeiten können.
+                </p>
+                <!-- Ersetzt den alten "Konditionen prüfen"-Button -->
+                <a href="https://wa.me/4915759547628?text=Hallo%20STS%20Team,%20ich%20würde%20gerne%20einen%20Gesprächstermin%20für%20B2B-Konditionen%20vereinbaren." class="header-cta" style="background-color: #ffffff; color: var(--color-primary); display: inline-block;" target="_blank" rel="noopener">
+                    Gesprächstermin per WhatsApp anfragen
+                </a>
+            </div>
+        </section>
+        
+        <!-- Zielgruppen Definition (Punkte 80 bis 84) -->
+        <section style="padding: 80px 20px;">
+            <div class="container">
+                <div class="section-header text-center" style="margin-bottom: 50px;">
+                    <span class="section-tag">Branchenlösungen</span>
+                    <h2>Für jedes Gewerbe die passende Pflege</h2>
+                </div>
+
+                <div class="services-grid">
+                    <!-- 81: Hotels -->
+                    <div class="service-card" style="border-top: none; cursor: default;">
+                        <h3 style="color: var(--color-primary);">Hotellerie & Pensionen</h3>
+                        <p>Strahlend weiße Bettwäsche, weiche Handtücher und makellose Textilien, die den hohen Ansprüchen Ihrer Gäste gerecht werden.</p>
+                    </div>
+
+                    <!-- 82: Praxen -->
+                    <div class="service-card" style="border-top: none; cursor: default;">
+                        <h3 style="color: var(--color-primary);">Arztpraxen & Pflege</h3>
+                        <p>Hygienisch reine Berufskleidung, Kittel und Laken nach höchsten Sauberkeitsstandards für medizinisches und therapeutisches Personal.</p>
+                    </div>
+
+                    <!-- 83: Gastronomie -->
+                    <div class="service-card" style="border-top: none; cursor: default;">
+                        <h3 style="color: var(--color-primary);">Gastronomie & Catering</h3>
+                        <p>Perfekt geglättete Tischdecken, Stoffservietten und saubere Koch- und Servicekleidung für einen professionellen Auftritt.</p>
+                    </div>
+
+                    <!-- 84: Weitere Gewerbe -->
+                    <div class="service-card" style="border-top: none; cursor: default;">
+                        <h3 style="color: var(--color-primary);">Kanzleien & Unternehmen</h3>
+                        <p>Zuverlässiger Hemdenservice für Kanzleien, gepflegte Business-Garderobe sowie saubere Arbeitskleidung für Einzelhandel und Handwerk.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- 4. FOOTER -->
@@ -193,47 +261,11 @@
     </footer>
 
     <!-- SCHWEBENDER WHATSAPP-BUTTON -->
-    <a href="https://wa.me/4915759547628?text=Hallo%20STS%20Team,%20ich%20habe%20eine%20B2B-Anfrage." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <a href="https://wa.me/4915759547628?text=Hallo%20STS%20Team,%20wir%20haben%20Interesse%20an%20Ihrem%20B2B-Service." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
         </svg>
         <span>Chat starten</span>
-    </a>
-
-    <!-- JAVASCRIPT: E-Mail-Workflow ohne Fremd-Backend -->
-    <script>
-        function handleB2BSubmit(e) {
-            e.preventDefault();
-
-            const type = document.getElementById('b2b-type').value;
-            const company = document.getElementById('b2b-company').value;
-            const person = document.getElementById('b2b-contact-person').value;
-            const email = document.getElementById('b2b-email').value;
-            const phone = document.getElementById('b2b-phone').value;
-            const address = document.getElementById('b2b-address').value;
-            const date = document.getElementById('b2b-date').value;
-            const time = document.getElementById('b2b-time').value;
-            const details = document.getElementById('b2b-details').value;
-
-            const subject = encodeURIComponent(`B2B-Anfrage: ${type} - ${company}`);
-            const body = encodeURIComponent(
-                `Guten Tag STS Team,\n\n` +
-                `Hiermit frage ich folgenden Termin an:\n\n` +
-                `Art des Anliegens: ${type}\n` +
-                `Firma / Betrieb: ${company}\n` +
-                `Ansprechpartner: ${person}\n` +
-                `Telefon: ${phone}\n` +
-                `E-Mail: ${email}\n` +
-                `Standort / Adresse: ${address}\n` +
-                `Wunschtermin: ${date} (${time})\n\n` +
-                `Details / Textilmengen:\n${details}\n\n` +
-                `Bitte um verbindliche Bestätigung per E-Mail.`
-            );
-
-            // Öffnet das vorbefüllte Standard-E-Mail-Programm des Nutzers
-            window.location.href = `mailto:info@sts-textilreinigung.de?subject=${subject}&body=${body}`;
-        }
-    </script>
-
+ </a>
 </body>
 </html>
