@@ -2,32 +2,69 @@
    STS TEXTILREINIGUNG & SCHNEIDEREI - DESIGN SYSTEM TOKENS (v1.0)
    ========================================================================== */
 
+/* ==========================================================================
+   PHASE 23: ZENTRALES FARB- UND DESIGNSYSTEM
+   ========================================================================== */
 :root {
-  /* Farbklima: Refined Boutique */
-  --color-primary: #0F1E36;       /* Deep Navy */
-  --color-primary-light: #1B355D; /* Soft Navy für Hover/Karten */
-  --color-bg: #F9F8F6;            /* Warmes Creme / Off-White */
-  --color-surface: #FFFFFF;       /* Reines Weiß für Inhaltskarten */
-  --color-accent: #C5A880;        /* Muted Sandgold / Champagne */
-  --color-accent-hover: #B3956B;  /* Dunklerer Sandton für Interaktionen */
+  /* FARBEN (Punkte 222, 223, 224, 225) */
+  --color-primary: #112233;    /* Deep Navy - Souverän, Vertrauen, Sauberkeit */
+  --color-background: #f9f8f6;  /* Creme/Off-White - Warme, wertige Flächen */
+  --color-accent: #c5a880;     /* Muted Sandgold - Wird extrem sparsam eingesetzt! */
   
-  /* Textfarben & Kontraste */
-  --text-main: #212529;           /* Neutrales Dunkelgrau für Fließtext */
-  --text-muted: #5A6578;          /* Sekundärtext / Metadaten */
-  --text-light: #F9F8F6;          /* Heller Text auf Navy-Hintergründen */
+  --text-dark: #2a2a2a;
+  --text-muted: #555555;
+  
+  /* TYPOGRAFIE (Punkte 228, 229) */
+  --font-serif: 'Playfair Display', serif;       /* Für markante, große Überschriften */
+  --font-sans: 'Plus Jakarta Sans', sans-serif;  /* Für perfekte Lesbarkeit bei UI & Text */
+  
+  /* FORMENSPRACHE (Punkte 226, 227) */
+  --border-radius: 4px; /* Dezente Radien. Übermäßig runde "Blasen" sind verboten. */
+  
+  /* ABSTÄNDE / SPACING (Punkt 233) */
+  --spacing-sm: 15px;
+  --spacing-md: 30px;
+  --spacing-lg: 60px;
+  --spacing-xl: 80px;
+/* NEU: Hält das Layout beim Rauszoomen perfekt zusammen */
+  --max-width: 1200px; 
+}
 
-  /* Typografie-System */
-  --font-serif: "Playfair Display", Georgia, serif;
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+/* ==========================================================================
+   GLOBALE REGELN (Punkte 228 bis 232)
+   ========================================================================== */
 
-  /* Formensprache & Layout */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --max-width: 1280px;
+/* Globale Fließtext-Schrift (229) */
+body {
+  font-family: var(--font-sans);
+  color: var(--text-dark);
+}
 
-  /* Mobile Touch Targets */
-  --min-touch-size: 48px;
+/* Serifenschrift für alle Überschriften (228) */
+h1, h2, h3, h4, h5, h6, .section-tag {
+  font-family: var(--font-serif);
+  color: var(--color-primary);
+}
+
+/* 230: Einheitliche Buttonstile (zwingt alle Buttons auf den 4px Radius) */
+.header-cta, button[type="submit"] {
+  border-radius: var(--border-radius) !important;
+  font-family: var(--font-sans);
+  /* Die Akzentfarbe (Gold) nutzen wir sparsam nur für die Schrift/Rahmen (225) */
+  color: var(--color-accent);
+}
+
+/* 231: Einheitliche Inputstile (zwingt alle Formulare auf den gleichen Look) */
+input[type="text"], input[type="email"], input[type="tel"], input[type="date"], select, textarea {
+  font-family: var(--font-sans);
+  border-radius: var(--border-radius) !important;
+  border: 1px solid #ccc;
+}
+
+/* 232: Einheitliche Kartenstile (entfernt alte runde Ecken, erzwingt 4px) */
+.service-card, .price-card, .step-card, .faq-item {
+  border-radius: var(--border-radius) !important;
+  background-color: #ffffff; /* Heben sich dezent von der Creme-Fläche ab */
 }
 
 /* Basis-Reset */
@@ -551,24 +588,46 @@ h1, h2, h3, h4 {
   text-decoration: underline;
 }
 
-/* Floating WhatsApp (Unten Rechts) */
+/* ==========================================================================
+   SCHWEBENDER WHATSAPP-BUTTON (Phase 16 - Sunbul Design)
+   ========================================================================== */
 .whatsapp-float {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
-  background-color: #25D366;
-  color: #FFFFFF;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--color-primary); /* Dunkelblau statt WhatsApp-Grün */
+  color: var(--color-accent); /* Goldene Schrift & Icon */
+  padding: 12px 24px;
+  border-radius: 50px;
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 12px 18px;
-  border-radius: 50px;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
   text-decoration: none;
-  font-weight: 700;
-  font-size: 0.9rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  z-index: 999;
-  min-height: var(--min-touch-size);
+  font-weight: 600;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(197, 168, 128, 0.3); /* Dezenter goldener Rand */
+}
+
+.whatsapp-float:hover {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.whatsapp-float svg {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+  }
 }
 
 /* ==========================================================================
@@ -1007,5 +1066,394 @@ h1 .amp, h2 .amp, h3 .amp, .hero-title .amp {
   }
   .slider-container {
     min-height: 300px;
+  }
+}
+/* ==========================================================================
+   HEADER, LOGO & NAVIGATION (Phase 19)
+   ========================================================================== */
+/* Logo Skalierung (Punkte 186, 187) */
+.header-logo {
+  height: 70px; /* Desktop Standard */
+  width: auto;
+  transition: height 0.3s ease;
+}
+
+/* Sticky Header & Kompaktmodus (Punkte 190, 191) */
+.main-header {
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+  transition: background-color 0.3s ease;
+}
+
+.main-header.compact .header-logo {
+  height: 50px; /* Wird beim Scrollen dezent kleiner */
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  transition: padding 0.3s ease;
+}
+
+.main-header.compact .nav-container {
+  padding: 8px 0;
+}
+
+/* Mobile Actions (Punkt 192) */
+.mobile-header-actions {
+  display: none;
+  align-items: center;
+  gap: 15px;
+}
+
+.mobile-phone-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-primary);
+  color: var(--color-accent);
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+/* ---------------------------------------------------
+   MOBILE MENÜ (bis 992px)
+   --------------------------------------------------- */
+@media (max-width: 992px) {
+  .header-logo {
+    height: 55px; /* Mobile Standard */
+  }
+  .main-header.compact .header-logo {
+    height: 45px; /* Mobile Kompakt */
+  }
+  
+  .nav-menu {
+    display: none; /* Versteckt, bis Menü geöffnet wird */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+    padding: 10px 20px 20px;
+    gap: 15px;
+    margin: 0;
+    list-style: none;
+  }
+  
+  .nav-menu.active {
+    display: flex; /* Zeigt das Menü beim Klick an */
+  }
+  
+  .nav-menu li a {
+    display: block;
+    padding: 12px 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  
+  .nav-menu li:last-child a {
+    border-bottom: none;
+  }
+  
+  nav[aria-label="Hauptnavigation"] {
+    width: 100%;
+  }
+  
+  /* Mobile Buttons einblenden */
+  .mobile-header-actions {
+    display: flex;
+  }
+}
+
+/* ---------------------------------------------------
+   DESKTOP MENÜ (ab 993px) (Punkt 188)
+   --------------------------------------------------- */
+@media (min-width: 993px) {
+  .mobile-header-actions {
+    display: none;
+  }
+  .nav-menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-menu li a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  .nav-menu li a:hover,
+  .nav-menu li a.active {
+    color: var(--color-accent);
+  }
+}
+/* ==========================================================================
+   PHASE 20: MOBILE DESIGN & TOUCH-FLÄCHEN
+   ========================================================================== */
+
+/* 193: Standard Mobile Breakpoint (alles unter 768px Breite) */
+@media (max-width: 768px) {
+  
+  /* 194, 195, 196: Hero & Über-uns Bereiche für Mobile anpassen (Abstände & Schrift) */
+  .page-hero, .hero {
+    padding: 40px 20px !important;
+  }
+  
+  h1, .hero-title {
+    font-size: 2.2rem !important;
+    line-height: 1.2;
+  }
+  
+  h2 {
+    font-size: 1.8rem !important;
+  }
+  
+  /* 197: Mobile-Muster "Bild -> Text" */
+  /* Wenn Text und Bild nebeneinanderstehen, brechen sie auf dem Handy automatisch so um, dass das Bild IMMER über dem Text steht */
+  .image-text-section {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* 198: Höhe der Leistungsbilder auf Mobile begrenzen */
+  /* Verhindert, dass Bilder auf dem Handy den kompletten Bildschirm einnehmen */
+  .service-image, .about-image {
+    max-height: 250px !important;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+}
+
+/* ==========================================================================
+   TOUCHFLÄCHEN (min. 48px für optimale Bedienbarkeit - Punkte 199 bis 203)
+   ========================================================================== */
+
+/* 199: Buttons (min. 48px Klickhöhe) */
+.header-cta, button[type="submit"] {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 200: Touchfläche des Menüs (Hamburger-Button & Links) */
+.menu-toggle {
+  width: 48px !important;
+  height: 48px !important;
+}
+
+.nav-menu li a {
+  padding: 15px 10px !important; /* Sorgt für >48px Klickhöhe auf dem Handy für jeden Menüpunkt */
+}
+
+/* 201: WhatsApp & Telefon-CTA Touchflächen */
+.whatsapp-float {
+  min-height: 48px;
+}
+
+.mobile-phone-cta {
+  width: 48px !important;
+  height: 48px !important;
+}
+
+/* 202: Touchfläche der Kacheln (genug Innenabstand zum Scrollen ohne Fehlklicks) */
+.service-card, .price-card, .step-card, .faq-item {
+  padding: 25px !important; 
+}
+
+/* 203: Touchfläche der Formularfelder (Eingabefelder groß genug für dicke Daumen) */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+  min-height: 48px; 
+}
+/* ==========================================================================
+   PHASE 21: DESKTOP DESIGN & ZICK-ZACK LAYOUT
+   ========================================================================== */
+
+/* 204 & 205: Max-Breite auf 1200px begrenzen und zentrieren */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 206: Full-Bleed Sections. Der Hintergrund geht über die volle Breite, der Inhalt (.container) bleibt zentriert */
+section {
+  width: 100%;
+}
+
+/* 209: Textbreiten auf Desktop begrenzen (ca. 75 Zeichen für optimale Lesbarkeit) */
+p {
+  max-width: 75ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Linksbündige Texte (z.B. in Kacheln oder Formularen) wieder normal setzen */
+.text-left p, .service-card p, .faq-item p, .zig-zag-text p, .split-text p {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* 211: Übermäßigen Leerraum zwischen Sections reduzieren (überschreibt alte, zu große HTML-Werte) */
+section {
+  padding-top: 60px !important;
+  padding-bottom: 60px !important;
+}
+.page-hero {
+  padding-top: 80px !important;
+  padding-bottom: 80px !important;
+}
+
+/* ==========================================================================
+   DAS ZICK-ZACK LAYOUT FÜR DIE BILDER (Vorbereitung für Phase 13)
+   ========================================================================== */
+.zig-zag-container {
+  display: flex;
+  flex-direction: column;
+  gap: 80px; /* Abstand zwischen den verschiedenen Themen */
+}
+
+/* 207: Desktop-Zick-Zack */
+.zig-zag-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px; /* 210: Kontrollierter, nicht übermäßiger Leerraum zwischen Bild und Text */
+}
+
+/* Jede zweite Reihe automatisch umdrehen (Bild rechts, Text links) */
+.zig-zag-row:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* 208: Bildgrößen auf Desktop exakt vereinheitlichen */
+.zig-zag-image {
+  flex: 1;
+  max-width: 500px;
+  height: 380px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.zig-zag-text {
+  flex: 1;
+  max-width: 550px; /* Begrenzung für den Text im Zick-Zack */
+}
+
+/* Mobile Anpassung für das Zick-Zack (fällt untereinander, Bild immer oben) */
+@media (max-width: 768px) {
+  .zig-zag-row, .zig-zag-row:nth-child(even) {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  .zig-zag-text p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .zig-zag-image {
+    height: 250px;
+  }
+}
+/* ==========================================================================
+   PHASE 22: ANIMATIONEN & SCROLL-TO-TOP
+   ========================================================================== */
+
+/* 216 & 217: Dezenter Page-Enter-Effekt (0.6 Sekunden, weiches Einblenden) */
+@keyframes fadeInPage {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+body {
+  animation: fadeInPage 0.6s ease-in-out forwards;
+}
+
+/* 214: Dezente Übergänge für alle Bilder */
+img {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* 218 & 219: Scroll-to-Top Button (Links positioniert!) */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 30px;
+  left: 30px; /* Bewusst links, um WhatsApp auf der rechten Seite nicht zu überlagern */
+  background-color: var(--color-primary);
+  color: var(--color-accent);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 1px solid rgba(197, 168, 128, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  
+  /* 220: Startet unsichtbar und leicht nach unten versetzt */
+  opacity: 0; 
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+/* Diese Klasse wird per JavaScript hinzugefügt, wenn gescrollt wurde */
+.scroll-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+}
+
+/* 221: Mobile Anpassung für den Scroll-to-Top Button */
+@media (max-width: 768px) {
+  .scroll-top-btn {
+    bottom: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
   }
 }
