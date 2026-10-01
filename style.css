@@ -886,3 +886,126 @@ h1 .amp, h2 .amp, h3 .amp, .hero-title .amp {
   margin: 0;
   font-size: 0.95rem;
 }
+/* ==========================================================================
+   SO FUNKTIONIERT ES (Schritte 1-4)
+   ========================================================================== */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  position: relative;
+}
+
+.step-card {
+  text-align: center;
+  padding: 20px;
+  background: #f9f8f6;
+  border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  background-color: var(--color-primary);
+  color: var(--color-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 auto 20px auto;
+  font-family: var(--font-serif);
+  border: 2px solid var(--color-accent);
+}
+
+.step-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: var(--color-primary);
+}
+
+.step-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+/* ==========================================================================
+   KUNDENSTIMMEN (Slider)
+   ========================================================================== */
+.slider-container {
+  position: relative;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-slide {
+  display: none;
+  width: 100%;
+}
+
+.stars {
+  color: #FABB05; /* Das typische Google-Sterne-Gold */
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.review-text {
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+
+.review-author {
+  font-weight: 600;
+  color: var(--color-primary);
+  font-size: 1.1rem;
+}
+
+/* Die Punkte unter dem Slider */
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 6px;
+  background-color: #d4d4d4;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.active-dot, .dot:hover {
+  background-color: var(--color-accent);
+}
+
+/* Sanfte Einblend-Animation */
+.fade {
+  animation-name: fadeAnim;
+  animation-duration: 1s;
+}
+
+@keyframes fadeAnim {
+  from {opacity: 0.4} 
+  to {opacity: 1}
+}
+
+/* Auf dem Handy etwas kleinere Schrift für die Zitate */
+@media (max-width: 768px) {
+  .review-text {
+    font-size: 1.05rem;
+  }
+  .slider-container {
+    min-height: 300px;
+  }
+}
