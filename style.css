@@ -107,7 +107,7 @@ h1, h2, h3, h4 {
 /* Top-Bar (Öffnungszeiten & Direktkontakt) */
 .top-bar {
   background-color: var(--color-primary);
-  color: var(--text-light);
+  color: #ffffff;
   font-size: 0.875rem;
   padding: 8px 0;
   border-bottom: 1px solid rgba(197, 168, 128, 0.2);
