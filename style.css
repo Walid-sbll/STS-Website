@@ -596,44 +596,49 @@ h1, h2, h3, h4 {
 }
 
 /* ==========================================================================
-   SCHWEBENDER WHATSAPP-BUTTON (Phase 16 - Sunbul Design)
+   SCHWEBENDER WHATSAPP-BUTTON (Sichtbar & Befreit)
    ========================================================================== */
 .whatsapp-float {
   position: fixed;
-  bottom: 30px;
+  bottom: 80px; /* Weiter nach oben gerückt, weg vom Rand */
   right: 30px;
-  background-color: var(--color-primary); /* Dunkelblau statt WhatsApp-Grün */
-  color: var(--color-accent); /* Goldene Schrift & Icon */
-  padding: 12px 24px;
+  background-color: #25D366; /* Zurück zum auffälligen WhatsApp-Grün */
+  color: #ffffff; /* Weiße Schrift */
+  padding: 14px 24px;
   border-radius: 50px;
   display: flex;
   align-items: center;
   gap: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   text-decoration: none;
   font-weight: 600;
-  z-index: 1000;
+  z-index: 9999; /* Ganz nach vorne zwingen */
   transition: all 0.3s ease;
-  border: 1px solid rgba(197, 168, 128, 0.3); /* Dezenter goldener Rand */
+  border: none; 
 }
 
 .whatsapp-float:hover {
-  background-color: var(--color-accent);
-  color: var(--color-primary);
+  background-color: #1EBE55;
+  color: #ffffff;
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
 }
 
 .whatsapp-float svg {
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
+}
+
+/* Versteckt das störende Netlify-Logo rigoros */
+#netlify-badge, .netlify-badge {
+  display: none !important;
 }
 
 @media (max-width: 768px) {
   .whatsapp-float {
-    bottom: 20px;
+    bottom: 40px; /* Auf dem Handy auch höher, weg vom Daumenbereich */
     right: 20px;
-    padding: 10px 20px;
+    padding: 12px 20px;
   }
 }
 
