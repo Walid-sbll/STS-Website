@@ -46,12 +46,19 @@ h1, h2, h3, h4, h5, h6, .section-tag {
   color: var(--color-primary);
 }
 
-/* 230: Einheitliche Buttonstile (zwingt alle Buttons auf den 4px Radius) */
+/* 230: Einheitliche Buttonstile */
 .header-cta, button[type="submit"] {
   border-radius: var(--border-radius) !important;
   font-family: var(--font-sans);
-  /* Die Akzentfarbe (Gold) nutzen wir sparsam nur für die Schrift/Rahmen (225) */
-  color: var(--color-accent);
+  background-color: var(--color-accent); /* Hintergrund in Gold */
+  color: var(--color-primary) !important; /* Schrift in Dunkelblau erzwingen */
+  border: none;
+  font-weight: 600;
+  transition: opacity 0.3s ease;
+}
+
+.header-cta:hover, button[type="submit"]:hover {
+  opacity: 0.9;
 }
 
 /* 231: Einheitliche Inputstile (zwingt alle Formulare auf den gleichen Look) */
