@@ -10,6 +10,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Schiebt den Inhalt auf Unterseiten unter den fixierten Header */
+        body {
+            padding-top: 140px;
+        }
+        @media (max-width: 768px) {
+            body { padding-top: 110px; }
+        }
+    </style>
 </head>
 <body>
 
@@ -47,7 +56,7 @@
         </div>
     </header>
 
-    <main class="container" style="padding: 60px 20px; max-width: 800px;">
+    <main class="container" style="padding: 40px 20px; max-width: 800px;">
         <span class="section-tag">Rechtliche Hinweise</span>
         <h1 style="margin-bottom: 24px;">Datenschutzerklärung</h1>
 
